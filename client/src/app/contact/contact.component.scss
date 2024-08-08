@@ -1,0 +1,117 @@
+@import '../../styles.scss';
+
+.contact-wrapper {
+    #form-wrapper {
+        width: 50%;
+        h3 {
+            color: $primary-white;
+            font-size: 2rem;
+            text-align: center;
+            line-height: 3rem;
+
+            @media (max-width: 768px) {
+                line-height: 3rem;
+            }
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            background-color: #e2e2e2;
+            padding: 20px;
+            border-radius: 15px;
+            mat-form-field {
+                width: 100%;
+            }
+        }
+    }
+
+    #contact-info-wrapper {
+        width: 50%;
+        p {
+            span {
+                color: $primary-yellow;
+                display: block;
+            }
+            color: $primary-white;
+            padding: 0 1rem 1.5rem 0;
+            font-size: 3rem;
+            line-height: 3rem;
+
+            @media (max-width: 768px) {
+                font-size: 2.5rem;
+            }
+        }
+
+        #socials-wrapper {
+            padding-top: 2rem;
+            flex-wrap: wrap;
+        
+            .socials {
+                padding: 1rem;
+                font-size: 1.5rem;
+            
+                a {
+                    color: $primary-white;
+                    text-decoration: none;
+                }
+            
+                .bi {
+                    margin-right: 0.5rem;
+                }
+            
+                .bi-linkedin {
+                    color: #0063c1;
+                }
+            
+                .bi-facebook {
+                    color: #0060fe;
+                }
+            
+                .bi-whatsapp {
+                    color: #00e876;
+                }
+            
+                .bi-envelope-at-fill {
+                    color: $primary-blue;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 576px) {
+    .contact-wrapper {
+        flex-wrap: wrap;
+
+        #contact-info-wrapper {
+            width: 100%;
+            p {
+                font-size: 2rem;
+                line-height: 2rem;
+                padding: 1rem;
+                margin: 0;
+                text-align: center;
+            }
+
+            #socials-wrapper {
+                justify-content: center;
+                padding: 0;
+                margin: 1rem 0;
+
+                .socials {
+                    width: 40%;
+                    text-align: center;
+                }
+            }
+        }
+
+        #form-wrapper {
+            width: 100%;
+
+            h3 {
+                margin-bottom: 2rem;
+            }
+        }
+    }
+}

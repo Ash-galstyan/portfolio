@@ -1,0 +1,51 @@
+<div class="container details-wrapper">
+    <h2 id="project-title">Project: {{ project.title }}</h2>
+    <mat-grid-list cols="5" rowHeight="100px">
+        <mat-grid-tile
+            id="project-img-tile"
+            [colspan]="imgColSpan"
+            [rowspan]="imgRowSpan">
+            <div class="h-100 w-100 preview-img-wrapper">
+                <img class="project-preview-img" [src]="project.previewImageSrc" alt="Project preview image">
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile
+            id="project-info"
+            [colspan]="projectInfoColSpan"
+            [rowspan]="projectInfoRowSpan">
+            <div class="detail-info-wrapper">
+                <div class="detail-info-section">
+                    <div class="icon-wrapper"><i class="bi bi-building"></i></div>
+                    <div class="detail-info">
+                        <span class="info-title d-block">Company</span>
+                        <span class="pt-2">{{project.company}}</span>
+                    </div>
+                </div>
+                <div class="p-relative detail-info-section">
+                    <div class="icon-wrapper">
+                        <i class="bi bi-hdd-stack"></i>
+                    </div>
+                    <div class="detail-info">
+                        <span class="info-title d-block">Technologies:</span>
+                        {{ project.stackUsed }}
+                    </div>
+                </div>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+
+    <mat-card class="featured-project-wrapper mt-4">
+        <mat-card-header>
+          <mat-card-title><h3>{{ project.title }}</h3></mat-card-title>
+          <mat-card-subtitle>Summary</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ project.description }}</p>
+          @if (project.link) {
+            <div class="project-link">
+                <span>Visit: </span><a [attr.href]="project.link" target="_blank">{{project.title}}</a>
+              </div>
+          }
+        </mat-card-content>
+    </mat-card>
+</div>

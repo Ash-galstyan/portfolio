@@ -1,0 +1,93 @@
+<div [ngClass]="{'page-wrapper': isSeparatePage}">
+    <div [ngClass]="{'separate-page-container': isSeparatePage}">
+        <h2 class="section-title text-center">Projects</h2>
+        <div class="container">
+            <div class="projects-wrapper section-inner-wrapper">
+                @for (project of projects; track project) {
+                    <mat-card class="featured-project-wrapper">
+                        <div class="overlay"></div>
+                        <mat-card-header>
+                        <mat-card-title><h3>{{ project.company }}</h3></mat-card-title>
+                        <mat-card-subtitle>{{ project.title }}</mat-card-subtitle>
+                        </mat-card-header>
+                        <img mat-card-image [src]="project.previewImageSrc" class="mt-2" alt="Project preview image">
+                        <mat-card-content class="pt-2">
+                        <p>{{ project.intro }}</p>
+                        </mat-card-content>
+                        <mat-card-actions>
+                            <button type="button" class="learn-more-btn" (click)="goToProjectPage(project.id)" mat-raised-button data-toggle="modal" data-target="#maaksusModal">
+                                Learn More
+                            </button>
+                        </mat-card-actions>
+                    </mat-card>
+                }
+            </div>
+    
+            <div class="achievements-wrapper">
+                <h2 class="section-title text-center">Achievements</h2>
+                <!-- <div class="certificate-wrapper">
+                    <div class="achievement internal">
+                        <img src="../../assets/images/achievements/awareness_training.png" alt="Awareness training badge image">
+                    </div>
+        
+                    <div class="achievement internal">
+                        <img src="../../assets/images/achievements/brilliant_elearner.png" alt="Brilliant elearner badge image">
+                    </div>
+        
+                    <div class="achievement internal">
+                        <img src="../../assets/images/achievements/cloudx_foundations.png" alt="Cloudx foundations badge image">
+                    </div>
+        
+                    <div class="achievement internal">
+                        <img src="../../assets/images/achievements/elearner.png" alt="Elearner badge image">
+                    </div>
+        
+                    <div class="achievement internal">
+                        <img src="../../assets/images/achievements/engx_bootcamp.png" alt="Engx bootcamp completion badge image">
+                    </div>
+        
+                    <div class="achievement internal">
+                        <img src="../../assets/images/achievements/exploring_generative_ai.png" alt="Exploring generative AI certificate image">
+                    </div>
+                </div> -->
+    
+                <div class="certificate-wrapper section-inner-wrapper">
+                    <div class="achievement certificate" (click)="openDialog('../../assets/images/achievements/rxjs_certificate.jpg')">
+                        <img src="../../assets/images/achievements/rxjs_certificate.jpg" alt="RxJs certificate image">
+                    </div>
+        
+                    <div class="achievement certificate" (click)="openDialog('../../assets/images/achievements/typescript_certificate.jpg')">
+                        <img src="../../assets/images/achievements/typescript_certificate.jpg" alt="Typescript certificate image">
+                    </div>
+        
+                    <div class="achievement certificate" (click)="openDialog('../../assets/images/achievements/angular_securing_apps_certificate.jpg')">
+                        <img src="../../assets/images/achievements/angular_securing_apps_certificate.jpg" alt="Securing Angular apps certificate image">
+                    </div>
+        
+                    <div class="achievement certificate" (click)="openDialog('../../assets/images/achievements/vuejs_certificate.jpg')">
+                        <img src="../../assets/images/achievements/vuejs_certificate.jpg" alt="Vuejs certificate image">
+                    </div>
+        
+                    <div class="achievement certificate" (click)="openDialog('../../assets/images/achievements/ai_intro_certificate.jpg')">
+                        <img src="../../assets/images/achievements/ai_intro_certificate.jpg" alt="AI intro certificate image">
+                    </div>
+        
+                    <div class="achievement certificate" (click)="openDialog('../../assets/images/achievements/what_is_generative_ai_certificate.jpg')">
+                        <img src="../../assets/images/achievements/what_is_generative_ai_certificate.jpg" alt="What is generative AI certificate image">
+                    </div>
+        
+                    <div class="achievement certificate" (click)="openDialog('../../assets/images/achievements/intro_prompt_engineering_certificate.jpg')">
+                        <img src="../../assets/images/achievements/intro_prompt_engineering_certificate.jpg" alt="Prompt engineering intro certificate image">
+                    </div>
+        
+                    <div class="achievement certificate" (click)="openDialog('../../assets/images/achievements/open_ai_fine_tuning_api_certificate.jpg')">
+                        <img src="../../assets/images/achievements/open_ai_fine_tuning_api_certificate.jpg" alt="Fine tuning OpenAi API certificate image">
+                    </div>
+                    <div class="achievement certificate" (click)="openDialog('../../assets/images/achievements/cyber_secure_coder.png')">
+                        <img src="../../assets/images/achievements/cyber_secure_coder.png" alt="Cyber secure coder certificate image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

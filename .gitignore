@@ -1,0 +1,8 @@
+server/.env
+server/node_modules
+server/sendgrid.env
+client/node_modules
+client/.angular
+client/dist
+.vscode
+client/.editorconfig

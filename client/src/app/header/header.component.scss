@@ -1,0 +1,107 @@
+@import '../../styles';
+
+#navbar-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.icon-bar {
+    width: 22px;
+    height: 2px;
+    background: #fff;
+    margin: 3px;
+    position: relative;
+}
+
+.menu-mobile {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background-color: $grey-900;
+
+    #logo-wrapper {
+        display: flex;
+        align-items: center;
+
+        #logo {
+            width: 45px;
+        }
+    }
+
+    .mat-icon {
+        color: $primary-yellow;
+        position: relative;
+        z-index: 3000;
+    }
+}
+
+.cdk-overlay-transparent-backdrop.cdk-overlay-backdrop-showing {
+    display: none;
+}
+
+mat-toolbar {
+    padding: 1rem 3rem;
+    height: auto;
+    justify-content: space-between;
+    background: $background-dark-grey;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 2px #2a2828;
+    #logo-wrapper {
+        #logo {
+            width: 3rem;
+            height: auto;
+        }
+
+        #portfolio-name {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+    }
+
+    #sections-container {
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        margin: 0;
+        width: 65%;
+        .nav-item a {
+            text-decoration: none;
+            color: $primary-white;
+            cursor: pointer;
+
+            &:hover {
+                color: $primary-blue;
+            }
+        }
+    }
+}
+
+:host::ng-deep {
+    .cdk-overlay-pane {
+        width: 100%;
+        .mat-mdc-menu-panel {
+            width: 100%;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .mat-toolbar .mat-icon-button {
+      display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    #project-title {
+        text-align: center;
+    }
+}

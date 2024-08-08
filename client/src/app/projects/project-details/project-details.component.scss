@@ -1,0 +1,179 @@
+@import '../../../styles.scss';
+
+:host::ng-deep {
+    #project-info {
+        .mat-grid-tile-content {
+            align-items: start;
+            justify-content: flex-start;
+            color: $primary-white;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+    }
+
+    @media (max-width: 599px) {
+        #project-info {
+            margin-top: 30px;
+            height: auto !important;
+            padding-bottom: 10px;
+
+            .mat-grid-tile-content {
+                margin-left: 5px;
+                margin-right: 5px;
+            }
+        }
+
+        .mat-grid-tile-content {
+            position: static;
+        }
+    }
+}
+
+:host {
+    padding-top: 104px;
+    padding-bottom: 100px;
+    display: block;
+    --gray-400: oklch(70.9% 0.015 304.04);
+    --gray-700: oklch(36.98% 0.014 302.71);
+    --gray: oklch(0.28 0 0);
+    --yellow: oklch(0.89 0.18 96.3);
+    --gray-accent: var(--gray);
+    --yellow-accent: var(--yellow);
+    background: linear-gradient(168deg, rgba(35,35,35,1) 0%, rgba(57,57,57,1) 56%, rgba(254,217,23,0.5796641791044777) 92%);
+
+    @media (max-width: 576px) {
+        padding-bottom: 80px;
+    }
+}
+
+.details-wrapper {
+    margin-top: 70px;
+
+    #project-img-tile {
+        border-radius: 4px;
+
+        @media (max-width: 599px) {
+            
+        }
+    }
+
+    #project-title {
+        margin-bottom: 60px;
+    }
+
+    #project-info {
+        .info-title {
+            font-size: 1.5rem;
+            line-height: 1.5rem;
+            font-weight: 600;
+            margin-left: 5px;
+            margin-bottom: 15px;
+        }
+
+
+        .detail-info-wrapper {
+            width: 100%;
+            padding: 0 15px;
+            border-top: 3px solid $primary-yellow;
+            border-radius: 5px;
+            box-shadow: 0px 5px 15px oklch(0.9 0.18 96.45);
+
+            .detail-info-section {
+                display: flex;   
+                padding: 20px 0;
+                
+                &:not(:first-child) {
+                    border-top: 1px solid #fafafa;
+                }
+                
+                i {
+                    margin-right: 10px;
+                    font-size: 1.5rem;
+                    line-height: 1.5rem;
+                }
+
+                .detail-info {
+                    font-size: 1rem;
+                    line-height: 1rem;
+                }
+
+                @media (max-width: 599px) {
+                    padding: 12px 20px;
+                    align-items: center;
+                }
+            }
+
+            @media (max-width: 599px) {
+                box-shadow: 0px 3px 5px oklch(0.9 0.18 96.45);
+            }
+        }
+    }
+    
+    .project-preview-img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .featured-project-wrapper {
+        background: color-mix(in srgb, var(--yellow) 5%, transparent);
+        color: $primary-white;
+        margin-bottom: 80px;
+        width: 60%;
+        h3 {
+            font-size: 1.5rem;
+            line-height: 1.5rem;
+        }
+
+        mat-card-subtitle {
+            font-size: 1rem;
+            color: $secondary-yellow;
+        }
+    }
+    
+    .pill {
+        width: 15px;
+    }
+    
+    .container {
+        padding-bottom: 4rem;
+    }
+
+    .project-link {
+        a {
+            text-decoration: none;
+            color: $secondary-yellow;
+            cursor: pointer;
+        }
+    }
+
+    @media (max-width: 599px) {
+        margin-top: 45px;
+
+        .featured-project-wrapper {
+            width: 100%;
+            margin-bottom: 0;
+            margin-top: 20px;
+        }
+
+        .mat-grid-list {
+            height: auto !important;
+        }
+        
+        .mat-grid-tile {
+            position: static;
+        }
+
+        #project-info {
+            .detail-info-wrapper .detail-info-section .detail-info {
+                line-height: 1.25rem;
+
+                .info-title {
+                    margin-left: 0;
+                    margin-bottom: 5px;
+                    font-size: 1.25rem;
+                    line-height: 1.25rem;
+                }
+            }
+        }
+    }
+}

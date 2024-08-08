@@ -1,0 +1,31 @@
+@import '../styles.scss';
+
+:host {
+    display: block;
+
+    #scroll-top {
+        position: fixed;
+        right: 30px;
+        bottom: 30px;
+        height: 45px;
+        width: 45px;
+        background-color: $primary-blue;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: 0.2s ease-in;
+        z-index: 100;
+
+        &:hover {
+            width: 50px;
+            height: 50px;
+        }
+
+        i {
+            color: $primary-yellow;
+            font-size: 1.5rem;
+        }
+    }
+}

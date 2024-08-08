@@ -1,0 +1,438 @@
+@use '@angular/material' as mat;
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+$my-primary: mat.define-palette(mat.$indigo-palette, 500);
+$my-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$primary-white: #fafafa;
+$primary-yellow: #fed917;
+$secondary-yellow: #fed917d4;
+$primary-blue: #6496e7;
+$grey-900: oklch(19.37% 0.006 300.98);
+$background-dark-grey: #232323;
+$background-light-grey: #3b3b3b;
+$background-darker-light-grey: #393939;
+
+$my-warn: mat.define-palette(mat.$red-palette);
+
+$my-theme: mat.define-light-theme((
+ color: (
+   primary: $my-primary,
+   accent: $my-accent,
+   warn: $my-warn,
+ ),
+ typography: mat.define-typography-config(),
+ density: 0,
+));
+
+
+.flex-container {
+    display: flex;
+}
+
+.pl-2 {
+    padding-left: 0.5rem ;
+}
+
+.pt-2 {
+    padding-top: 0.5rem ;
+}
+
+.pb-2 {
+    padding-bottom: 0.5rem ;
+}
+
+.pr-2 {
+    padding-right: 0.5rem ;
+}
+
+.pt-4 {
+    padding-top: 1rem ;
+}
+
+.pr-4 {
+    padding-right: 1rem ;
+}
+
+.pb-4 {
+    padding-bottom: 1rem ;
+}
+
+.pl-4 {
+    padding-left: 1rem ;
+}
+
+.mt-2 {
+    margin-top: 0.5rem ;
+}
+
+.mr-2 {
+    margin-right: 0.5rem ;
+}
+
+.mb-2 {
+    margin-bottom: 0.5rem ;
+}
+
+.ml-2 {
+    margin-left: 0.5rem ;
+}
+
+.mt-4 {
+    margin-top: 1rem ;
+}
+
+.mr-4 {
+    margin-right: 1rem ;
+}
+
+.ml-4 {
+    margin-left: 1rem ;
+}
+
+.mb-4 {
+    margin-bottom: 1rem ;
+}
+
+.w-100 {
+    width: 100% ;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.d-inline-block {
+    display: inline-block ;
+}
+
+.d-block {
+    display: block ;
+}
+
+.d-none {
+    display: none;
+}
+
+@media (min-width: 576px) {
+    .d-sm-block {
+        display: block;
+    }
+
+    .d-sm-none {
+        display: none !important;
+    }
+}
+
+.d-flex {
+    display: flex ;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.w-30 {
+    width: 30%;
+}
+
+.w-20 {
+    width: 20%;
+}
+
+.w-10 {
+    width: 10%;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.flex-2 {
+    flex: 2;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+:host {
+    --mat-menu-container-color: $secondary-yellow;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+@media only screen and (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+}
+
+@media (min-width: 2000px) {
+    html {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .container {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+.cdk-overlay-pane {
+    width: 100%;
+    .mat-mdc-menu-panel {
+        width: 100%;
+        max-width: initial;
+        background-color: $background-dark-grey;
+
+        .mat-mdc-menu-item-text {
+            color: #fafafa;
+            text-align: center;
+
+            &:hover {
+                color: $primary-blue;
+            }
+        }
+    }
+}
+
+.section-inner-wrapper {
+    padding-top: 2rem;
+}
+
+// --------------Template-------------
+
+app-root {
+    --bright-blue: oklch(0.66 0.14 258.1);
+    --blue: oklch(0.67 0.14 258.85);
+    --electric-violet: oklch(53.18% 0.28 296.97);
+    --french-violet: oklch(47.66% 0.246 305.88);
+    --vivid-pink: oklch(69.02% 0.277 332.77);
+    --hot-red: oklch(61.42% 0.238 15.34);
+    --orange-red: oklch(63.32% 0.24 31.68);
+    --bright-yellow: oklch(0.89 0.18 96.3);
+
+    --gray-900: oklch(19.37% 0.006 300.98);
+    --gray-700: oklch(36.98% 0.014 302.71);
+    --gray-400: oklch(70.9% 0.015 304.04);
+
+    --red-to-pink-to-purple-vertical-gradient: linear-gradient(
+      180deg,
+      var(--orange-red) 0%,
+      var(--vivid-pink) 50%,
+      var(--electric-violet) 100%
+    );
+
+    --red-to-pink-to-purple-horizontal-gradient: linear-gradient(
+      90deg,
+      var(--orange-red) 0%,
+      var(--vivid-pink) 50%,
+      var(--electric-violet) 100%
+    );
+
+    --pill-accent: var(--bright-blue);
+
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol";
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+    font-size: 3.125rem;
+    color: var(--gray-900);
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -0.125rem;
+    margin: 0;
+    font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+        "Segoe UI Symbol";
+}
+
+main {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: inherit;
+    position: relative;
+
+    @media(max-width: 525px) {
+        padding: 0;
+    }
+}
+
+.angular-logo {
+    max-width: 9.2rem;
+}
+
+.divider {
+    width: 2px;
+    background: var(--red-to-pink-to-purple-vertical-gradient);
+    margin-inline: 0.5rem;
+}
+
+.pill-group {
+    display: flex;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    padding-left: 0;
+}
+
+.pill {
+    display: flex;
+    align-items: center;
+    --pill-accent: var(--bright-yellow);
+    background: color-mix(in srgb, var(--pill-accent) 5%, transparent);
+    padding-inline: 0.75rem;
+    padding-block: 0.375rem;
+    border-radius: 2.75rem;
+    border: 0;
+    transition: background 0.3s ease;
+    font-family: var(--inter-font);
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.4rem;
+    letter-spacing: -0.00875rem;
+    text-decoration: none;
+    width: 3rem;
+    height: 3rem;
+    text-align: center;
+    justify-content: center;
+    &.tech-icon {
+        padding: 3.5rem;
+        flex-direction: column;
+    }
+
+    i {
+        color: var(--bright-blue);
+    }
+
+    @media (max-width: 525px) {
+        max-width: 1rem;
+        max-height: 1rem;
+    }
+}
+
+.pill:hover {
+    background: color-mix(in srgb, var(--pill-accent) 15%, transparent);
+    box-shadow: 3px 3px var(--pill-accent);
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 0.73rem;
+    margin-top: 1.5rem;
+}
+
+.social-links path {
+    transition: fill 0.3s ease;
+    fill: var(--gray-400);
+}
+
+.social-links a:hover svg path {
+    fill: var(--gray-900);
+}
+
+h2 {
+    font-size: 3rem;
+    line-height: 3rem;
+    color: $primary-white;
+    margin-bottom: 1rem;
+
+    @media (max-width: 576px) {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+}
+
+.page-wrapper {
+    padding-top: 150px;
+    padding-bottom: 50px;
+    display: block;
+    --gray-400: oklch(70.9% 0.015 304.04);
+    --gray-700: oklch(36.98% 0.014 302.71);
+    --gray: oklch(0.28 0 0);
+    --yellow: oklch(0.89 0.18 96.3);
+    --gray-accent: var(--gray);
+    --yellow-accent: var(--yellow);
+    background: linear-gradient(168deg, rgb(35, 35, 35) 0%, rgb(57, 57, 57) 56%, rgba(254, 217, 23, 0.5796641791) 92%);
+}
+
+@media screen and (max-width: 650px) {
+    .content {
+        flex-direction: column;
+        width: max-content;
+    }
+
+    .divider {
+        height: 1px;
+        width: 100%;
+        background: var(--red-to-pink-to-purple-horizontal-gradient);
+        margin-block: 1.5rem;
+    }
+}
+html, body { height: 100%; }
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    overflow-x: hidden;
+    position: relative;
+    height: auto;
+    min-height: 100vh;
+}

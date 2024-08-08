@@ -1,0 +1,45 @@
+<div id="navbar-wrapper" [ngClass]="{'fixed': isNavbarFixed}" [@fixedPosition]="isNavbarFixed">
+    @if(isScreenMobile) {
+        <div class="menu-mobile navbar">
+            <a routerLink="/home" id="logo-wrapper">
+                <img [src]="logoSrc" alt="logo" id="logo">
+            </a>
+
+            
+            <button
+                mat-icon-button color="accent"
+                aria-label="Mobile menu toggle icon"
+                [matMenuTriggerFor]="menu">
+                @if(isHamburguer) {
+                    <mat-icon #menuIcon btn-overlay (click)="onClick()">menu</mat-icon>
+                }
+                @if(!isHamburguer) {
+                    <mat-icon #menuIcon btn-overlay (click)="onClick()">close</mat-icon>
+                }
+                <div class="btn-overlay"></div>
+            </button>
+        
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item routerLink="/home">Home</button>
+                <button mat-menu-item routerLink="/projects-achievements">Projects</button>
+                <button mat-menu-item routerLink="/feedback">Feedback</button>
+                <button mat-menu-item routerLink="/contact">Contact</button>
+                <button mat-menu-item routerLink="/resume">Resume</button>
+            </mat-menu>
+        </div>
+    }
+    @if(!isScreenMobile) {
+        <mat-toolbar class="navbar">
+            <a routerLink="/home" id="logo-wrapper">
+                <img [src]="logoSrc" alt="logo" id="logo">
+            </a>
+            <ul id="sections-container">
+                <li class="nav-item"><a routerLink="/home" >Home</a></li>
+                <li class="nav-item"><a routerLink="/projects-achievements">Projects</a></li>
+                <li class="nav-item"><a routerLink="/feedback">Feedback</a></li>
+                <li class="nav-item"><a routerLink="/contact">Contact</a></li>
+                <li class="nav-item"><a routerLink="/resume">Resume</a></li>
+            </ul>
+        </mat-toolbar>
+    }
+</div>

@@ -1,0 +1,43 @@
+@import '../../styles.scss';
+
+:host {
+    display: block;
+    width: 100%;
+    background-color: $background-dark-grey;
+
+    .logo-wrapper {
+        width: 20%;
+
+        img {
+            max-width: 60px;
+        }
+    }
+
+    #copyright-wrapper {
+        color: $primary-white;
+        text-align: right;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        @media (max-width: 576px) {
+            display: flex;
+        }
+
+        span {
+            display: block;
+            max-width: 80%;
+            margin-left: auto;
+            border-top: 1px solid #cecece;
+            padding: 20px;
+
+            @media (max-width: 576px) {
+                width: 75%;
+                max-width: none;
+                padding: 10px 0 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}

@@ -1,0 +1,82 @@
+@import '../../styles';
+
+.foot-contact-wrapper {
+    display: flex;
+    padding-top: 20px;
+
+    @media (max-width: 576px) {
+        flex-wrap: wrap;
+    }
+
+    .logo-wrapper {
+        flex: 3;
+
+        span {
+            color: $primary-white;
+            display: block;
+        }
+
+        img {
+            max-width: 100px;
+        }
+
+        @media (max-width: 576px) {
+            flex: 1;
+            margin-right: 10px;
+            
+            img {
+                max-width: 70px;
+            }
+        }
+
+        @media (max-width: 350px) {
+            width: 50%;
+            flex: initial;
+            margin: 0;
+        }
+    }
+
+    .socials-wrapper {
+        flex: 1;
+
+        @media (max-width: 350px) {
+            width: 50%;
+            flex: initial;
+        }
+    }
+
+    .navigation-wrapper {
+        flex: 1;
+
+        .nav-item a {
+            cursor: pointer;
+        }
+
+        @media (max-width: 350px) {
+            width: 50%;
+        }
+    }
+
+    .contact-wrapper {
+        flex: 1;
+
+        @media (max-width: 350px) {
+            width: 50%;
+            flex: initial;
+        }
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+
+        a {
+            text-decoration: none;
+            color: $primary-white;
+
+            &:hover {
+                color: $primary-blue;
+            }
+        }
+    }
+}

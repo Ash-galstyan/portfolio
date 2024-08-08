@@ -1,0 +1,11 @@
+<!-- <div class="canvas-wrapper"> -->
+    <!-- <canvas [id]="id"></canvas> -->
+<!-- </div> -->
+<div id="about-animation-wrapper" #animationWrapper>
+    @if (isComponentVisible) {
+        <span class="html-tags">
+            &lt;h1&gt;<span class="html-text" appGradulaText [gradualText]="text" [interval]="70" [@fadeInOut]></span>&lt;h1/&gt;
+        </span>
+    }
+</div>
+<img src="../../../assets/images/html_background.png" id="about-background" alt="HTML code image">

@@ -1,0 +1,78 @@
+<section id="home" class="section-wrapper">
+    <div class="container">
+        <!-- @if(isImageLoaded) { -->
+            <!-- <h2 [@slideLeft] class="d-inline-block section-title ml-4">{{portfolioName}}</h2> -->
+        <!-- } -->
+        <div class="flex-container intro-container">
+            @if(!isScreenMobile) {
+                <div [@slideUp] id="portrait-wrapper" class="flex-1">
+                    <img src="../../assets/images/portrait-bw.png" id="portrait" alt="My portrait" (load)="animateTexts()">
+                </div>
+            }
+            @if(isImageLoaded) {
+                <div id="welcome-text" class="ml-4 flex-1">
+                    <div class="text-wrapper">
+                        <div [@fadeInOut] id="title-wrapper">
+                            <h2>Hello, I'm</h2>
+                            <h3 id="portfolio-title" class="d-inline-block">{{title}}</h3>
+                        </div>
+                        <p
+                            class=" gradual-text"
+                            appGradulaText
+                            [gradualText]="introTitle"
+                            [interval]="50"
+                            [@fadeInOut]
+                            (animated)="onAnimationComplete()">
+                        </p>
+                        <p [@slideLeft] class="intro-text">{{ introText }}</p>
+                        <button
+                            mat-raised-button
+                            type="submit"
+                            id="reach-out-btn"
+                            [@slideRight]
+                            (click)="goToContactPage()">
+                            Reach out
+                        </button>
+                    </div>
+                </div>
+            }
+
+            @if(isScreenMobile) {
+                <div [@slideUp] id="portrait-wrapper" class="flex-1">
+                    <img src="../../assets/images/portrait-bw.png" id="portrait" alt="My portrait" (load)="animateTexts()">
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<section id="about" class="section-wrapper" [@scrollAnimation]="'scroll'">
+    <app-about></app-about>
+</section>
+<section id="skills" class="section-wrapper" [@scrollAnimation]="'scroll'">
+    <app-skills></app-skills>
+</section>
+<section id="projects-achievements" class="section-wrapper" [@scrollAnimation]="'scroll'">
+    <app-projects></app-projects>
+</section>
+<section id="feedback" class="section-wrapper" [@scrollAnimation]="'scroll'">
+    <app-feedback></app-feedback>
+</section>
+<section id="contact" class="section-wrapper" [@scrollAnimation]="'scroll'">
+    <app-contact></app-contact>
+</section>
+<router-outlet></router-outlet>
+<div id="homepage-navigation">
+    <div id="nav-wrapper">
+        <i class="bi bi-arrow-bar-left"></i>
+        <i class="bi bi-arrow-bar-right"></i>
+        <ul>
+            <li><a (click)="scrollTo('home', $event)">Home</a></li>
+            <li><a (click)="scrollTo('about', $event)">About</a></li>
+            <li><a (click)="scrollTo('skills', $event)">Skills</a></li>
+            <li><a (click)="scrollTo('projects-achievements', $event)">Projects</a></li>
+            <li><a (click)="scrollTo('feedback', $event)">Feedback</a></li>
+            <li><a (click)="scrollTo('contact', $event)">Contact</a></li>
+        </ul>
+    </div>
+</div>

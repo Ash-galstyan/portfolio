@@ -1,0 +1,42 @@
+<div [ngClass]="{'page-wrapper': isSeparatePage}">
+    <div [ngClass]="{'separate-page-container': isSeparatePage}">
+        <div class="container pb-4">
+            <h2 class="text-center section-title">Contact</h2>
+        
+            <div class="flex-container contact-wrapper section-inner-wrapper">
+                <div id="contact-info-wrapper">
+                    <p><span>Available for:</span> remote positions, freelance positions, will consider relocation opportunities</p>
+                </div>
+                <div id="form-wrapper">
+                    <h3>Or send email directly</h3>
+                    <form class="form-group" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                        <mat-form-field appearance="outline">
+                            <mat-label for="first-name">First Name: </mat-label>
+                            <input matInput id="first-name" type="text" formControlName="firstName">
+                        </mat-form-field>
+                
+                        <mat-form-field appearance="outline">
+                            <mat-label for="last-name">Last Name: </mat-label>
+                            <input matInput id="last-name" type="text" formControlName="lastName">
+                        </mat-form-field>
+                
+                        <mat-form-field appearance="outline">
+                            <mat-label for="email">Email: </mat-label>
+                            <input matInput id="email" type="text" formControlName="email">
+                            @if (contactForm.controls.email.invalid) {
+                                <mat-error>{{errorMessage}}</mat-error>
+                            }
+                        </mat-form-field>
+                
+                        <mat-form-field appearance="outline">
+                            <mat-label for="message">Message: </mat-label>
+                            <textarea matInput id="message" type="text" formControlName="message"></textarea>
+                        </mat-form-field>
+            
+                        <button mat-raised-button type="submit" [disabled]="!contactForm.valid">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
